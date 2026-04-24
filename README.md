@@ -26,7 +26,7 @@
 - Pick your travel vibe, budget, duration, interests, and climate preference
 - Claude AI generates 3 personalized destination recommendations
 - Each result includes highlights, best travel season, and cost estimate
-- Fully containerized — runs with a single `docker compose up`
+- Fully containerized — runs with a single `docker compose up`, creating 2 containers: backend	(FastAPI + Python) and frontend (Vue build served by Nginx) + Docker Compose to connect them.
 
 ## Quick Start
 

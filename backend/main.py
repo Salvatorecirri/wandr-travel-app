@@ -70,11 +70,9 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
-
 # Data Models
 
-## Add structured itinerary (day-by-day plan) => Days[], each day activites, timeline-based plan, specify also solo-travel or group travelling or family travelling (might insert questions)
+## Add structured itinerary (day-by-day plan) => Days[], each day activates, timeline-based plan, specify also solo-travel or group travelling or family travelling (might insert questions)
 
 class SuggestionRequest(BaseModel):
     mood: str
@@ -105,11 +103,14 @@ def health():
 @app.post("/suggest", response_model=SuggestionResponse)
 def suggest(req: SuggestionRequest):
 
-    # ✅ MOCK MODE
+    # MOCK MODE
     if USE_MOCK:
         return MOCK_RESPONSE
 
-    # 🔥 REAL MODE (Claude)
+    # REAL MODE (Claude)
+    # Client only created when actually needed to avoid unnecessary API calls in mock mode (Lazy initialization)
+    client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
+    
     prompt = f"""You are a world-class travel curator. Suggest exactly 3 destinations.
 
 Traveler profile:

@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "Vue.volar",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "ms-python.python",
+    "ms-python.pylance",
+    "ms-azuretools.vscode-docker",
+    "eamodio.gitlens",
+    "rangav.vscode-thunder-client"
+  ]
+}

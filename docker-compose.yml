@@ -1,0 +1,18 @@
+services:
+  backend:
+    build: ./backend
+    environment:
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      - USE_MOCK=${USE_MOCK:-false} # use the value from .env if set, otherwise default to false — so AI mode is the fallback
+    ports:
+      - "8000:8000"
+
+    restart: unless-stopped
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    restart: unless-stopped

@@ -11,6 +11,8 @@ from pydantic import BaseModel
 import anthropic
 import os
 
+from anthropic.types import TextBlock
+
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -130,7 +132,10 @@ Respond ONLY with valid JSON."""
         )
 
         import json
-        data = json.loads(message.content[0].text)
+        block = message.content[0]
+        if not isinstance(block, TextBlock):
+            raise HTTPException(status_code=500, detail="Unexpected response type from Claude")
+        data = json.loads(block.text)
         return SuggestionResponse(**data)
 
     except Exception as e:

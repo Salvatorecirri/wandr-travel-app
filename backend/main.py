@@ -15,8 +15,6 @@ from groq import Groq
 import os
 import json
 
-from anthropic.types import TextBlock
-
 from dotenv import load_dotenv
 load_dotenv()
 

@@ -10,7 +10,9 @@
 
 ## Demo
 
-*Screenshot or GIF here — add after building*
+| Input | Output |
+|------|--------|
+| ![Home](frontend/assets/demo/demo-1.png) | ![Results](frontend/assets/demo/demo-2.png) |
 
 ## Stack
 

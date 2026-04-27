@@ -69,20 +69,54 @@ npm run dev
 
 ```
 wandr-travel-app/
+├── .github/
+│   └── workflows/
+│       └── ci.yml              # CI/CD pipeline
+├── .vscode/
+│   └── extensions.json         # Recommended extensions
 ├── backend/
-│   ├── main.py           # FastAPI app + Claude integration
-│   ├── requirements.txt
-│   └── Dockerfile
+│   ├── main.py                 # FastAPI + Claude
+│   ├── requirements.txt        # Pinned dependencies
+│   ├── Dockerfile              # Python container
+│   └── .dockerignore           # Clean Docker build
 ├── frontend/
+│   ├── .vscode/
+│   │   └── extensions.json     # Recommended extensions
+│   ├── public/
+│   │   ├── favicon.svg         # Browser tab icon
+│   │   └── icons.svg           # Shared SVG icon sprites
 │   ├── src/
-│   │   ├── types/        # TypeScript interfaces
-│   │   ├── composables/  # Vue composables (useTravelSuggestions)
-│   │   ├── components/   # TravelForm, DestinationCard
-│   │   └── App.vue
-│   ├── vite.config.ts
-│   └── Dockerfile
-├── docker-compose.yml
-└── .env.example
+│   │   ├── assets/             # Static assets (img, font)
+│   │   │   ├── hero.png
+│   │   │   └── vite.svg
+│   │   ├── components/
+│   │   │   ├── TravelForm.vue  # Input component
+│   │   │   └── DestinationCard.vue  # Output component
+│   │   ├── composables/
+│   │   │   └── useTravelSuggestions.ts  # Composable
+│   │   ├── types/
+│   │   │   └── index.ts        # TypeScript interfaces
+│   │   ├── App.vue             # Root + styles
+│   │   ├── main.ts             # App entrypoint
+│   │   └── style.css
+│   ├── .dockerignore           # Clean Docker build
+│   ├── .gitignore
+│   ├── Dockerfile              # Frontend container
+│   ├── index.html              # HTML shell
+│   ├── nginx.conf              # Prod server config
+│   ├── package.json            # Dependencies
+│   ├── package-lock.json
+│   ├── README.md
+│   ├── tsconfig.app.json
+│   ├── tsconfig.json           # TypeScript config
+│   ├── tsconfig.node.json
+│   └── vite.config.ts          # Dev proxy config
+├── .env.example                # Template for env vars
+├── .gitignore                  # Excludes .env, venv, dist
+├── docker-compose.yml          # Orchestration container
+├── LICENSE                     # Project license
+└── README.md                   # Full docs with badges
+
 ```
 
 ## Architecture

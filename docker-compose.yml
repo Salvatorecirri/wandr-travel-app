@@ -3,7 +3,9 @@ services:
     build: ./backend
     environment:
       - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      - GROQ_API_KEY=${GROQ_API_KEY}
       - USE_MOCK=${USE_MOCK:-false} # use the value from .env if set, otherwise default to false — so AI mode is the fallback
+      - LLM_PROVIDER=${LLM_PROVIDER}
     ports:
       - "8000:8000"
 

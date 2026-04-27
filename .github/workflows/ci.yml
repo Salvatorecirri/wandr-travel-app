@@ -8,7 +8,7 @@ on:
 
 jobs:
   backend:
-    name: Backend – lint & type check
+    name: Backend - lint & type check
     runs-on: ubuntu-latest
 
     steps:
@@ -32,7 +32,7 @@ jobs:
         run: cd backend && mypy main.py --ignore-missing-imports
 
   frontend:
-    name: Frontend – type check & build
+    name: Frontend - type check & build
     runs-on: ubuntu-latest
 
     steps:
@@ -52,7 +52,7 @@ jobs:
         run: cd frontend && npm run build
 
   docker:
-    name: Docker – build test
+    name: Docker - build test
     runs-on: ubuntu-latest
     needs: [backend, frontend]
 

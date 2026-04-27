@@ -19,7 +19,7 @@ function handleSubmit(req: SuggestionRequest) {
           <span class="logo-icon">✦</span>
           <span class="logo-text">WANDR</span>
         </div>
-        <p class="tagline-header">AI-powered travel suggestions, tailored to you.</p>
+        <p class="tagline-header">AI-powered travel suggestions, tailored to your needs.</p>
       </div>
       <div class="header-deco" aria-hidden="true">
         <span>PAR</span><span>TYO</span><span>NYC</span><span>BKK</span><span>CPT</span>

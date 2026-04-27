@@ -131,9 +131,12 @@ Vue 3 (TypeScript)  →  FastAPI (Python)  →  Claude API
 
 ## Environment Variables
 
-| Variable | Description |
-|----------|-------------|
-| `ANTHROPIC_API_KEY` | Your Anthropic API key from console.anthropic.com |
+| Variable | Required | Description |
+|----------|----------|-------------|
+| `LLM_PROVIDER` | No | `groq` (default, free) or `anthropic` |
+| `GROQ_API_KEY` | If using Groq | From console.groq.com |
+| `ANTHROPIC_API_KEY` | If using Anthropic | From console.anthropic.com |
+| `USE_MOCK` | No | `true` skips all API calls |
 
 ## License
 
